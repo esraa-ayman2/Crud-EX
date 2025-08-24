@@ -39,7 +39,15 @@ function clear() {
   productCategoryInput.value = "";
   productDescriptionInput.value = "";
   productImageInput.value = "";
-  
+    var inputs = [productNameInput, productPriceInput, productCategoryInput, productDescriptionInput];
+  inputs.forEach(input => {
+    input.classList.remove('is-valid', 'is-invalid');
+  });
+
+  document.getElementById("alertMsg").classList.add('d-none');
+  document.getElementById("alertPriceMsg").classList.add('d-none');
+  document.getElementById("alertCategoryMsg").classList.add('d-none');
+  document.getElementById("alertDesMsg").classList.add('d-none');
 }
 
 // Function To Display Cards
