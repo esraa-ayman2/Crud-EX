@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Bootstrap style -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Media -->
+    <link rel="stylesheet" href="./css/media.css" />
+    <title>CRUD EX</title>
+  </head>
+
+  <body>
+    <section class="bg-info w-75 mx-auto p-3 rounded-3">
+      <h2 class="mb-4 text-center">Crud Operations</h2>
+      <!-- inputs -->
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="productName"
+          placeholder=""
+          oninput="validName()"
+        />
+        <label for="productName">Product Name</label>
+        <p id="alertMsg" class="alert alert-danger d-none my-1">
+          Name must start with Capital letter and minimum characters 3 , max
+          character 20
+        </p>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="number"
+          class="form-control"
+          id="productPrice"
+          placeholder=""
+          oninput="validPrice()"
+        />
+        <label for="productPrice">Product Price</label>
+        <p id="alertPriceMsg" class="alert alert-danger d-none my-1">
+          Invalid price format. Please enter a number with up to two decimals
+          (e.g. 99,99 or 999.99 or 99)
+        </p>
+      </div>
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          id="productCategory"
+          placeholder=""
+          oninput="validCategory()"
+        />
+        <label for="productCategory">Product Category</label> 
+         <p id="alertCategoryMsg" class="alert alert-danger d-none my-1">
+          Product Category must start with Capital letter and minimum characters 3 , max
+          character 20
+        </p>
+      </div>
+      <!-- Text Area -->
+      <div class="form-floating mb-3">
+        <textarea
+          class="form-control"
+          style="height: 100px"
+          placeholder=""
+          id="productDescription"
+          oninput="validDescription()"
+       required ></textarea>
+        <label for="productDescription">Product Description</label>  
+        <p id="alertDesMsg" class="alert alert-danger d-none my-1" >
+          Description is too short. Please write at least 10 characters
+        </p>
+      </div>
+      <!-- Choose File-->
+      <div class="form-floating mb-3">
+        <input
+          type="file"
+          class="form-control"
+          id="productImage"
+          placeholder=""
+        />
+        <label for="productImage">Product Image</label>
+      </div>
+      <button class="btn btn-primary" onclick="addProduct()">
+        Add Product
+      </button>
+    </section>
+
+    <section>
+      <div class="container my-4">
+        <input
+          type="search"
+          oninput="searchProduct()"
+          id="searchProduct"
+          class="form-control w-50 my-4 mx-auto"
+          placeholder="Search.."
+        />
+        <div id="my-row" class="row g-3"></div>
+      </div>
+    </section>
+    <!-- Bootstrap js -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <!-- JS -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>
